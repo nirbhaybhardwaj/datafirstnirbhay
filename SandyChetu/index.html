@@ -1,0 +1,29 @@
+
+<style>
+*{margin:0px;}
+.header{display: flex; justify-content: space-between;}
+#myform{width:300px; padding:15px; background:silver;
+position: absolute; left:50%; top:0%; transform:translate(-50%  , -100%);
+transition:0.5s;
+}
+
+input[type="text"]{width:100%; padding: 10px;}
+</style>
+
+<button onclick="_show()">MyModal</button>
+<div id="myform">
+<div class="header">
+<h4>Register Form</h4>
+<button  onclick="_hide()">&times</button>
+
+</div>
+
+
+
+<p>Name</p>
+<input type="text">
+<p>Phone</p>
+<input type="text">
+<input type="submit">
+</div>
+<script  src="java.js"></script>

@@ -1,0 +1,3 @@
+ - name: Copy the file from master to mwiapp02
+                                     copy: src=buffer/app01-to-app02.jar dest=/tmp/
+                                           when: "{{ inventory_hostname == 'mwiapp02' }}"when: " inventory_hostname == 'devops'"

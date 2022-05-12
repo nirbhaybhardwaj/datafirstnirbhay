@@ -1,0 +1,76 @@
+
+------------------------------------------create a database------------------------------------------
+create database Chetu;
+use chetu
+----------------------------------------------create a table----------------------------------------------
+create table Emp1( Id int identity, name varchar(40),salary money,address varchar(50),mobile bigint,Email varchar(40))
+insert into Emp1 values
+('sonu kumar',20000,'rampur',979075534,'sonu@123'),
+('ankit kumar',30000,'moradabad',979054634,'ankit@123'),
+('aman kumar',50000,'joya',979046434,'aman@123'),
+('yash kumar',15000,'Noida',97906534,'yash@123'),
+('mohan kumar',5000,'Dehli',979064534,'mohan@123'),
+('ram  kumar',10000,'bumbai',979064534,'ram@123'),
+('sweta kumar',5050,'baglour',979064534,'sweta@123'),
+('pooja kumar',64555,'haridwar',979064534,'poo@123'),
+('jyoti kumar',45644,'dhampur',979064534,'jyoti@123'),
+('lovi kumar',641641,'noorpur',97651464534,'lovi@123'),
+('just kumar',13646,'amroha',979064534,'just@123'),
+('shyam kumar',45464,'nougawan',979064534,'shyam@123')
+
+----------------------------------------------------------create another table---------------------------------
+
+create table depart( DId int , Dname varchar(40),floor int )
+insert into depart values 
+(1,'computer',1),
+(2,'computer',1),
+(3,'computer',1),
+(41,'computer',1),
+(51,'computer',1),
+(6,'computer',1),
+(7,'computer',1),
+(9,'computer',1),
+(8,'computer',1),
+(48,'computer',1),
+(4,'computer',1),
+(5,'computer',1),
+(41,'computer',1),
+(54,'computer',1),
+(71,'computer',1),
+(7,'computer',1)
+
+
+select * from depart
+select*from Emp1
+
+
+select * from Emp1 where name='ankit kumar';
+
+---------------------------------------------------using between---------------------------------------------------
+
+select  * from emp1 where salary  between 5000 AND 30000 
+
+------------------------------------------------using count-------------------------------------------------------
+
+select count(salary) as connting from Emp1 
+
+------------------------------------------------using sum-------------------------------------------
+select sum(salary) as adding from Emp1
+
+------------------------------------------------using avg--------------------------------------
+
+select avg(salary) as average from Emp1
+
+-----------------------------------------------------using operator---------------------------------
+
+select* from  Emp1  where id  <=8 or id= 15
+
+--------------------------------------------------drop a column--------------------------------------
+
+alter table emp1 drop column email
+
+--------------------------------------------------joins----------------------------------------------
+select * from emp1 inner join depart on emp1.Id= depart.DId
+select * from emp1 left  join depart on emp1.Id= depart.DId
+select * from emp1 right join depart on emp1.Id= depart.DId
+select * from emp1 full join depart on emp1.Id= depart.DId

@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 style="color: #F64209 ">====This Is ViewBag Data====</h1st>
+    <h1>
+        @ViewBag.a <br />
+        @ViewBag.a1 <br />
+        @ViewBag.a2 <br />
+        @ViewBag.a3 <br />
+        @ViewBag.a4 <br />
+    </h1>
+    <ul>
+        @foreach (var item in ViewBag.List)
+        {
+            <li>@item</li>
+        }
+
+    </ul>
+
+
+    <h1 style="color:#6E09F6 ">====This Is ViewData====</h1>
+    <h1>
+        @ViewData["a"] <br />
+        @ViewData["a1"] <br />
+        @ViewData["a2"] <br />
+        @ViewData["a3"] <br />
+        @ViewData["a4"] <br />
+    </h1>
+    <ul>
+        @foreach (var item in (List<string>)ViewData["List"])
+        {
+            <li>@item</li>
+        }
+
+    </ul>
+
+
+    <h1 style="color:#D609F6 ">====This Is TempData====</h1>
+    <h1>
+        @TempData["a"] <br />
+        @TempData["a1"] <br />
+        @TempData["a2"] <br />
+        @TempData["a3"] <br />
+        @TempData["a4"] <br />
+    </h1>
+    <ul>
+        @foreach (var item in (List<string>)TempData["List"])
+        {
+            <li>@item</li>
+        }
+
+    </ul>
+

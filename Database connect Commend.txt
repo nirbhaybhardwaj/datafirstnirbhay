@@ -1,0 +1,9 @@
+scaffold-DbContext "Server=CHETUIWK1356\SQLEXPRESS ;Database=MAS ;Trusted_Connection=True; "Microsoft.EntityFrameworkCore.SqlServer -o DB_Context
+
+
+
+ 
+
+Procted class abc;;;;
+
+Procted class xyz:abc;======

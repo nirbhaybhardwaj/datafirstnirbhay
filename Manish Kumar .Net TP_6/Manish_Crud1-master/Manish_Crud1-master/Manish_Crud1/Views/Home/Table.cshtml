@@ -1,0 +1,74 @@
+﻿@model Manish_Crud1.Models.Manish
+<div class="text-center">
+    <h1 class="h1">Employee Table</h1>
+</div>
+<br />
+<h4 style="background-color:forestgreen" class="text-center text-white col">@TempData["Add"] @TempData["Update"]</h4>
+<br />
+<form asp-action="AddForm">
+    <div class="form-row">
+        <input type="hidden" asp-for="Id" />
+        <div class="col">
+            <input type="text" class="form-control" placeholder="enter name" data-val="true" data-val-required="Please enter name" asp-for="FirstName">
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="enter name" data-val="true" data-val-required="Please enter name" asp-for="LastName">
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Enter salary" data-val="true" data-val-required="Please enter salary" asp-for="Mobile">
+            <span asp-validation-for="Mobile" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Enter department" data-val="true" data-val-required="Please enter department" asp-for="Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Enter city " data-val="true" data-val-required="Please enter city" asp-for="Zipcode">
+            <span asp-validation-for="Zipcode" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-outline-info btn-block">Submit</button>
+        </div>
+        <div class="col">
+            <button type="reset" class="btn btn-outline-secondary btn-block">Clear</button>
+        </div>
+    </div>
+</form>
+
+<br />
+<br />
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Zipcode</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @if (ViewBag.GetValue != null)
+    {
+@foreach (var item in ViewBag.GetValue)
+{
+<tr>
+    <td>@item.Id</td>
+    <td>@item.FirstName</td>
+    <td>@item.LastName</td>
+    <td>@item.Mobile</td>
+    <td>@item.Email</td>
+    <td>@item.Zipcode</td>
+    <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+    <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+
+</tr>}}
+
+</table>
+@if (ViewBag.GetValue == null)
+{<p class="text-center">The list will be appeared once you done updating... </p>}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

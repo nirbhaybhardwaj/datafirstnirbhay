@@ -1,0 +1,57 @@
+<h1>====This Is ViewBag Data====</h1>
+<h1>
+    @ViewBag.a <br />
+    @ViewBag.a1 <br />
+    @ViewBag.a2 <br />
+    @ViewBag.a3 <br />
+    @ViewBag.a4 <br />
+</h1>
+<ul>
+    @foreach (var item in ViewBag.List)
+    {
+        <li>@item</li>
+    }
+
+</ul>
+
+
+<h1>====This Is ViewData====</h1>
+<h1>
+    @ViewData["a"] <br />
+    @ViewData["a1"] <br />
+    @ViewData["a2"] <br />
+    @ViewData["a3"] <br />
+    @ViewData["a4"] <br />
+</h1>
+<ul>
+    @foreach (var item in (List<string>()) ViewData["List"])
+    {
+        <li>@item</li>
+    }
+
+</ul>
+
+
+  ViewBag.a = "I Am Manish";
+            ViewBag.a1 = 120;
+            ViewBag.a2 = 20.0;
+            ViewBag.a3 = DateTime.Now;
+            ViewBag.a4 = "Smile Please";
+            ViewBag.List = new List<string>()
+            {
+                "India",
+                "Pakistan",
+                "USA",
+            };
+
+            ViewData["a"] = "I Am Manish";
+            ViewData["a1"] = 120;
+            ViewData["a2"] = 20.0;
+            ViewData["a3"] = DateTime.Now;
+            ViewData["a4"] = "Smile Please";
+            ViewData["List"] = new List<string>()
+            {
+                "India",
+                "Pakistan",
+                "USA",
+            };
